@@ -1,0 +1,5 @@
+.vs/**
+bin/
+bin_int/
+Project1/imgui.ini
+Project1/tobiiconfig.cfg
