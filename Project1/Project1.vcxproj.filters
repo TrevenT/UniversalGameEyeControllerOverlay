@@ -72,6 +72,9 @@
     <ClCompile Include="MouseJoyStickInteraction.cpp">
       <Filter>Source Files\tobii</Filter>
     </ClCompile>
+    <ClCompile Include="imgui\misc\cpp\imgui_stdlib.cpp">
+      <Filter>Source Files\imgui</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="window.h">

@@ -21,6 +21,7 @@ namespace Interactions
 		ImVec4 area = { 10, 10, 100, 100 };
 		float color[4] = { 1,1,1,0.85 };
 		bool focused = false;
+		std::string displayName = "";
 
 	};
 }

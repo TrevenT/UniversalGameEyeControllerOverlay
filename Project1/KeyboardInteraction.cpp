@@ -1,6 +1,7 @@
 #include "KeyboardInteraction.h"
 #include <imgui.h>
 #include <imgui_internal.h>
+#include "imgui/misc/cpp/imgui_stdlib.h"
 #include <format>
 #include <string>
 #include <sstream>
@@ -32,6 +33,8 @@ namespace Interactions
 			InteractionChanged |= ImGui::SliderFloat( std::format( "{}##{}", "W", uid ).c_str( ), &area.z, 0, 200, "%f", 1 );
 			InteractionChanged |= ImGui::SliderFloat( std::format( "{}##{}", "H", uid ).c_str( ), &area.w, 0, 200, "%f", 1 );
 
+			ImGui::InputText( "Custom Name", &displayName );
+
 			if ( ImGui::Button( std::format( "{}##{}", "Delete", uid ).c_str( ) ) )
 			{
 				doDelete = true;
@@ -48,7 +51,7 @@ namespace Interactions
 	{
 		const auto alpha = ( focused || open ) ? 1.0f : 0.4f;
 		Render::Rect( area.x, area.y, area.x + area.z, area.y + area.w, ImVec4{ color[0], color[1], color[2], color[3] * alpha }, 5, Render::CF_All );
-		const auto txt = std::format( "{}", Inputs::keyNames[key] );
+		const auto txt = displayName.size() > 0 ? displayName : std::format( "{}", Inputs::keyNames[key] );
 		const auto size = font->CalcTextSizeA( 40, FLT_MAX, 0, txt.c_str( ) );
 		Render::Text( font, 40, ( area.x + area.z / 2 ) - ( size.x / 2 ), ( area.y + area.w / 2 ) - ( size.y / 2 ), ImVec4{ color[0], color[1], color[2], color[3] * alpha }, txt.c_str( ) );
 	}
