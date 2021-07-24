@@ -7,3 +7,4 @@ The DirectX overlay may trigger some anticheats (since external wallhacks render
 All files needed are in the repo, however after building you may need to copy some of the tobii dll's into the programs directory.
 
 #### warning: lazy code!!
+Small Demo showing how it works: https://youtu.be/NBgUhyDmZnw
